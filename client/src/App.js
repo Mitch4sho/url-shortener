@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Input from "./Input";
 import Button from "./Button";
 import ShortUrl from "./ShortUrl";
@@ -14,7 +15,18 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit url");
+    console.log("submitted url");
+
+    const fullUrl = {
+      url: url,
+    };
+
+    axios
+      .post("http://localhost:9000/shortUrl/add", fullUrl)
+      .then((res) => console.log(res.data));
+
+    console.log(fullUrl);
+    setUrl("");
   };
 
   return (
