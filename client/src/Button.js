@@ -3,6 +3,6 @@ import styled from "styled-components";
 
 const ButtonStyled = styled.button``;
 
-export default function Button() {
-  return <ButtonStyled>Shorten</ButtonStyled>;
+export default function Button({ onSubmit }) {
+  return <ButtonStyled onClick={onSubmit}>Shorten</ButtonStyled>;
 }

@@ -12,11 +12,16 @@ export default function App() {
   const [url, setUrl] = useState("");
   const [shortenUrl, setShortenUrl] = useState("Test");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit url");
+  };
+
   return (
     <AppWrapper>
       <h1>Url shortener</h1>
       <Input url={url} setUrl={setUrl} />
-      <Button />
+      <Button onSubmit={handleSubmit} />
       <ShortUrl shortenUrl={shortenUrl} />
     </AppWrapper>
   );
