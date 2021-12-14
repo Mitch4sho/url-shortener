@@ -11,10 +11,9 @@ router.route("/add").post((req, res) => {
     const url = req.body.url;
     console.log(url);
     const newUrl = new ShortUrl({ full: url });
-    console.log(newUrl);
 
     newUrl.save()
-        .then(() => res.json('URL created and added'))
+        .then(() => res.json(newUrl))
         .catch(err => res.status(400).json(err));
 });
 

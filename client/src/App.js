@@ -11,7 +11,7 @@ const AppWrapper = styled.div`
 
 export default function App() {
   const [url, setUrl] = useState("");
-  const [shortenUrl, setShortenUrl] = useState("Test");
+  const [shortenUrl, setShortenUrl] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,9 +23,8 @@ export default function App() {
 
     axios
       .post("http://localhost:9000/shortUrl/add", fullUrl)
-      .then((res) => console.log(res.data));
+      .then((res) => setShortenUrl(res.data));
 
-    console.log(fullUrl);
     setUrl("");
   };
 
