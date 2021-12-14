@@ -3,6 +3,7 @@ import axios from "axios";
 import Input from "./Input";
 import Button from "./Button";
 import ShortUrl from "./ShortUrl";
+import { createShortUrl } from "./ utilities";
 import styled from "styled-components";
 
 const AppWrapper = styled.div`
@@ -17,12 +18,13 @@ export default function App() {
     e.preventDefault();
     console.log("submitted url");
 
-    const fullUrl = {
-      url: url,
+    const urls = {
+      full: url,
+      short: createShortUrl(),
     };
 
     axios
-      .post("http://localhost:9000/shortUrl/add", fullUrl)
+      .post("http://localhost:9000/shortUrl/add", urls)
       .then((res) => setShortenUrl(res.data));
 
     setUrl("");

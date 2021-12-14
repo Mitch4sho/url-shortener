@@ -8,9 +8,10 @@ router.route('/').get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-    const url = req.body.url;
-    console.log(url);
-    const newUrl = new ShortUrl({ full: url });
+    const fullUrl = req.body.full;
+    const shortUrl = req.body.short;
+    console.log(fullUrl, shortUrl);
+    const newUrl = new ShortUrl({ full: fullUrl, short: shortUrl });
 
     newUrl.save()
         .then(() => res.json(newUrl))
