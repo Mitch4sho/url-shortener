@@ -22,25 +22,15 @@ BackEnd:
 
 `npm install`
 
-From the server directory
-
 ## Backend && Frontend
-
-# Run
-
-`npm run dev`
+From the server directory
+Run `npm run dev`
 
 ## Backend
-
-# Run
-
-`npm start`
+Run `npm start`
 
 ## Frontend
-
-# Run
-
-`npm start`
+Run `npm start`
 
 ## Additional notes:
 
