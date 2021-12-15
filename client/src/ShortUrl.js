@@ -4,7 +4,6 @@ import styled from "styled-components";
 const ShortUrlWrapper = styled.div``;
 
 export default function ShortUrl({ shortenUrl }) {
-  console.log(shortenUrl);
   return (
     <ShortUrlWrapper>
       ShortURL

@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 9000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/shortUrl', shortUrlRouter)
+app.use('/shortUrl', shortUrlRouter);
 
 mongoose.connect(CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('mongoDB database connection established'))

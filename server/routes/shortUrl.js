@@ -7,10 +7,13 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json(err));
 });
 
-router.route("/add").post((req, res) => {
+router.route("/add").post(async (req, res) => {
     const fullUrl = req.body.full;
     const shortUrl = req.body.short;
-    console.log(fullUrl, shortUrl);
+
+    const url = await ShortUrl.findOne({ short: fullUrl });
+    if (url !== null) return res.json(url);
+
     const newUrl = new ShortUrl({ full: fullUrl, short: shortUrl });
 
     newUrl.save()

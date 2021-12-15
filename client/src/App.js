@@ -16,16 +16,19 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted url");
 
     const urls = {
       full: url,
       short: createShortUrl(),
     };
 
-    axios
-      .post("http://localhost:9000/shortUrl/add", urls)
-      .then((res) => setShortenUrl(res.data));
+    axios.post("http://localhost:9000/shortUrl/add", urls).then((res) => {
+      if (urls.full === res.data.short) {
+        window.open(res.data.full, "_blank");
+      } else {
+        setShortenUrl(res.data);
+      }
+    });
 
     setUrl("");
   };
