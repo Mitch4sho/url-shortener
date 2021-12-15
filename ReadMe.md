@@ -41,3 +41,13 @@ From the server directory
 # Run
 
 `npm start`
+
+## Additional notes:
+
+- Add a way to catch duplicated complete URLs and return the shortened URL it was originally assigned to
+
+- Add a sign in ability, custom shorten URLs assigned to each user
+
+- Add a list of available shortened URLs with their parent URL
+
+- Add more styling to links so they can look like a URL
