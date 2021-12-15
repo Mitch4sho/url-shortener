@@ -22,7 +22,7 @@ BackEnd:
 
 `npm install`
 
-## Backend && Frontend
+## Backend & Frontend
 From the server directory
 Run `npm run dev`
 
