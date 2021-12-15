@@ -5,6 +5,8 @@ const InputStyled = styled.input`
   width: 35%;
   padding: 5px;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
 `;
 
 export default function Input({ url, setUrl }) {
