@@ -8,6 +8,14 @@ import styled from "styled-components";
 
 const AppWrapper = styled.div`
   text-align: center;
+  height: 100vh;
+  background-color: #fff2df;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 `;
 
 export default function App() {
